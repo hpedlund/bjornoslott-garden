@@ -3,13 +3,25 @@ const selectionElement = document.getElementById("selection");
 const inventoryBodyElement = document.getElementById("inventory-body");
 
 function renderSelection(item) {
-  selectionElement.innerHTML = `
-    <strong>${item.name}</strong><br>
-    Type: ${item.type}<br>
-    Age: ${item.age}<br>
-    Location: ${item.location}<br>
-    Details: ${item.details}
-  `;
+  selectionElement.replaceChildren();
+
+  const name = document.createElement("strong");
+  name.textContent = item.name;
+  selectionElement.append(name, document.createElement("br"));
+
+  const fields = [
+    `Type: ${item.type}`,
+    `Age: ${item.age}`,
+    `Location: ${item.location}`,
+    `Details: ${item.details}`,
+  ];
+
+  fields.forEach((text, index) => {
+    selectionElement.append(text);
+    if (index !== fields.length - 1) {
+      selectionElement.append(document.createElement("br"));
+    }
+  });
 }
 
 function addMarker(item) {
@@ -26,24 +38,30 @@ function addMarker(item) {
 
 function addInventoryRow(item) {
   const row = document.createElement("tr");
-  row.innerHTML = `
-    <td>${item.name}</td>
-    <td>${item.type}</td>
-    <td>${item.age}</td>
-    <td>${item.location}</td>
-    <td>${item.details}</td>
-  `;
+  [item.name, item.type, item.age, item.location, item.details].forEach((value) => {
+    const cell = document.createElement("td");
+    cell.textContent = value;
+    row.append(cell);
+  });
   inventoryBodyElement.append(row);
 }
 
 async function init() {
-  const response = await fetch("./data/plants.json");
-  const plants = await response.json();
+  try {
+    const response = await fetch("./data/plants.json");
+    if (!response.ok) {
+      throw new Error(`Unable to load inventory (${response.status})`);
+    }
 
-  plants.forEach((item) => {
-    addMarker(item);
-    addInventoryRow(item);
-  });
+    const plants = await response.json();
+    plants.forEach((item) => {
+      addMarker(item);
+      addInventoryRow(item);
+    });
+  } catch (error) {
+    selectionElement.textContent = "Unable to load plant inventory data.";
+    console.error(error);
+  }
 }
 
 init();
