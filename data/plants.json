@@ -1,0 +1,38 @@
+[
+  {
+    "id": "oak-1",
+    "name": "Old Oak",
+    "type": "Tree",
+    "plantedAt": "1906-04-15T00:00:00Z",
+    "location": "North lawn near the manor",
+    "details": "Historic oak that marks the northern edge of the central lawn.",
+    "mapPosition": { "latitude": 56.77079, "longitude": 16.38305 }
+  },
+  {
+    "id": "apple-1",
+    "name": "Heritage Apple",
+    "type": "Tree",
+    "plantedAt": "1991-05-20T00:00:00Z",
+    "location": "Orchard row B, east side",
+    "details": "Traditional Swedish apple variety used for autumn harvest.",
+    "mapPosition": { "latitude": 56.77062, "longitude": 16.38371 }
+  },
+  {
+    "id": "rose-1",
+    "name": "Climbing Rose",
+    "type": "Plant",
+    "plantedAt": "2014-06-01T00:00:00Z",
+    "location": "South wall pergola",
+    "details": "Fragrant pink blooms, trained along the pergola structure.",
+    "mapPosition": { "latitude": 56.77038, "longitude": 16.38341 }
+  },
+  {
+    "id": "linden-1",
+    "name": "Linden",
+    "type": "Tree",
+    "plantedAt": "1946-09-10T00:00:00Z",
+    "location": "East avenue",
+    "details": "Part of the old avenue planting that frames the approach.",
+    "mapPosition": { "latitude": 56.77054, "longitude": 16.38399 }
+  }
+]

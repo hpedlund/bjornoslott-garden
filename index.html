@@ -1,0 +1,49 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Björnö Slott Garden Inventory</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <main>
+      <h1>Björnö Slott Garden Inventory</h1>
+      <p>
+        Click any marker on the map to query the plant or tree details from the
+        static inventory. The map is centered on Björnö Slott
+        (56.7705576, 16.3833692).
+      </p>
+
+      <section class="map-section" aria-label="Garden map with plant markers">
+        <div class="map" id="map" role="img" aria-label="Garden map">
+          <div class="map-label" id="map-label"></div>
+        </div>
+      </section>
+
+      <section class="details" aria-live="polite">
+        <h2>Selected plant/tree</h2>
+        <div id="selection">
+          Click a marker to view planted timestamp, location and details.
+        </div>
+      </section>
+
+      <section>
+        <h2>Inventory</h2>
+        <table>
+          <thead>
+            <tr>
+              <th>Name</th>
+              <th>Type</th>
+              <th>Planted timestamp</th>
+              <th>Location</th>
+              <th>Details</th>
+            </tr>
+          </thead>
+          <tbody id="inventory-body"></tbody>
+        </table>
+      </section>
+    </main>
+    <script src="script.js"></script>
+  </body>
+</html>
