@@ -3,20 +3,30 @@ const inventoryBodyElement = document.getElementById("inventory-body");
 const defaultMapCenter = { latitude: 56.7705576, longitude: 16.3833692 };
 const defaultZoomLevel = 18;
 
-const map = L.map("map").setView(
-  [defaultMapCenter.latitude, defaultMapCenter.longitude],
-  defaultZoomLevel
-);
-
-L.tileLayer(
-  "https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/{z}/{y}/{x}",
-  {
-    attribution:
-      "Tiles &copy; Esri &mdash; Source: Esri, i-cubed, USDA, USGS, AEX, GeoEye, Getmapping, Aerogrid, IGN, IGP, UPR-EGP, and the GIS User Community",
-    maxZoom: 20,
-    maxNativeZoom: 18,
-  }
-).addTo(map);
+const map = new maplibregl.Map({
+  container: "map",
+  style: {
+    version: 8,
+    sources: {
+      openstreetmap: {
+        type: "raster",
+        tiles: ["https://tile.openstreetmap.org/{z}/{x}/{y}.png"],
+        tileSize: 256,
+        attribution:
+          '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap contributors</a>',
+      },
+    },
+    layers: [
+      {
+        id: "osm",
+        type: "raster",
+        source: "openstreetmap",
+      },
+    ],
+  },
+  center: [defaultMapCenter.longitude, defaultMapCenter.latitude],
+  zoom: defaultZoomLevel,
+});
 
 function renderSelection(item) {
   selectionElement.replaceChildren();
@@ -41,19 +51,21 @@ function renderSelection(item) {
 }
 
 function addMarker(item) {
-  const marker = L.circleMarker(
-    [item.mapPosition.latitude, item.mapPosition.longitude],
-    {
-      radius: 10,
-      fillColor: "#2f7d32",
-      color: "#2d4f2d",
-      weight: 1,
-      fillOpacity: 0.9,
-    }
-  );
-  marker.bindTooltip(item.name);
-  marker.on("click", () => renderSelection(item));
-  marker.addTo(map);
+  const markerElement = document.createElement("button");
+  markerElement.type = "button";
+  markerElement.className = "map-marker";
+  markerElement.setAttribute("aria-label", item.name);
+
+  markerElement.addEventListener("click", () => renderSelection(item));
+
+  const marker = new maplibregl.Marker({
+    element: markerElement,
+    anchor: "center",
+  })
+    .setLngLat([item.mapPosition.longitude, item.mapPosition.latitude])
+    .addTo(map);
+
+  marker.getElement().title = item.name;
 }
 
 function addInventoryRow(item) {
