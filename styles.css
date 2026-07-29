@@ -56,8 +56,7 @@ main {
 
 .map {
   width: 100%;
-  height: min(760px, var(--map-height-ratio));
-  min-height: 620px;
+  height: clamp(620px, var(--map-height-ratio), 760px);
   border-top: 2px solid #60725f;
   border-bottom: 2px solid #60725f;
   overflow: hidden;
