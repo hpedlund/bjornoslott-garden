@@ -3,36 +3,36 @@
     "id": "oak-1",
     "name": "Old Oak",
     "type": "Tree",
-    "age": "120 years",
-    "location": "North lawn",
+    "plantedAt": "1906-04-15T00:00:00Z",
+    "location": "North lawn near the manor",
     "details": "Historic oak that marks the northern edge of the central lawn.",
-    "mapPosition": { "x": 22, "y": 18 }
+    "mapPosition": { "latitude": 56.77079, "longitude": 16.38305 }
   },
   {
     "id": "apple-1",
     "name": "Heritage Apple",
     "type": "Tree",
-    "age": "35 years",
-    "location": "Orchard row B",
+    "plantedAt": "1991-05-20T00:00:00Z",
+    "location": "Orchard row B, east side",
     "details": "Traditional Swedish apple variety used for autumn harvest.",
-    "mapPosition": { "x": 64, "y": 28 }
+    "mapPosition": { "latitude": 56.77062, "longitude": 16.38371 }
   },
   {
     "id": "rose-1",
     "name": "Climbing Rose",
     "type": "Plant",
-    "age": "12 years",
+    "plantedAt": "2014-06-01T00:00:00Z",
     "location": "South wall pergola",
     "details": "Fragrant pink blooms, trained along the pergola structure.",
-    "mapPosition": { "x": 72, "y": 72 }
+    "mapPosition": { "latitude": 56.77038, "longitude": 16.38341 }
   },
   {
     "id": "linden-1",
     "name": "Linden",
     "type": "Tree",
-    "age": "80 years",
+    "plantedAt": "1946-09-10T00:00:00Z",
     "location": "East avenue",
     "details": "Part of the old avenue planting that frames the approach.",
-    "mapPosition": { "x": 40, "y": 60 }
+    "mapPosition": { "latitude": 56.77054, "longitude": 16.38399 }
   }
 ]

@@ -6,10 +6,10 @@ An interactive GitHub Pages project documenting the garden at Björnö Slott in 
 
 - A static plant inventory (`/data/plants.json`) with:
   - plant or tree name
-  - age
+  - planted timestamp
   - location
   - details
-- An interactive map page (`/index.html`) where each mapped plant/tree can be clicked to query its information.
+- An interactive map page (`/index.html`) centered at `56.7705576, 16.3833692` where each mapped plant/tree can be clicked to query its information.
 
 ## Hosting
 

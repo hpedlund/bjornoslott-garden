@@ -11,18 +11,21 @@
       <h1>Björnö Slott Garden Inventory</h1>
       <p>
         Click any marker on the map to query the plant or tree details from the
-        static inventory.
+        static inventory. The map is centered on Björnö Slott
+        (56.7705576, 16.3833692).
       </p>
 
       <section class="map-section" aria-label="Garden map with plant markers">
-        <div class="map" id="map" role="img" aria-label="Simplified garden map">
-          <div class="map-label">Garden map</div>
+        <div class="map" id="map" role="img" aria-label="Garden map">
+          <div class="map-label" id="map-label"></div>
         </div>
       </section>
 
       <section class="details" aria-live="polite">
         <h2>Selected plant/tree</h2>
-        <div id="selection">Click a marker to view age, location and details.</div>
+        <div id="selection">
+          Click a marker to view planted timestamp, location and details.
+        </div>
       </section>
 
       <section>
@@ -32,7 +35,7 @@
             <tr>
               <th>Name</th>
               <th>Type</th>
-              <th>Age</th>
+              <th>Planted timestamp</th>
               <th>Location</th>
               <th>Details</th>
             </tr>

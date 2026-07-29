@@ -33,10 +33,11 @@ main {
   position: absolute;
   top: 0.5rem;
   left: 0.5rem;
-  background: rgba(255, 255, 255, 0.8);
+  background: rgba(255, 255, 255, 0.85);
   padding: 0.25rem 0.5rem;
   border-radius: 4px;
   font-size: 0.9rem;
+  z-index: 2;
 }
 
 .plant-marker {
