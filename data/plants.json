@@ -1,0 +1,38 @@
+[
+  {
+    "id": "oak-1",
+    "name": "Old Oak",
+    "type": "Tree",
+    "age": "120 years",
+    "location": "North lawn",
+    "details": "Historic oak that marks the northern edge of the central lawn.",
+    "mapPosition": { "x": 22, "y": 18 }
+  },
+  {
+    "id": "apple-1",
+    "name": "Heritage Apple",
+    "type": "Tree",
+    "age": "35 years",
+    "location": "Orchard row B",
+    "details": "Traditional Swedish apple variety used for autumn harvest.",
+    "mapPosition": { "x": 64, "y": 28 }
+  },
+  {
+    "id": "rose-1",
+    "name": "Climbing Rose",
+    "type": "Plant",
+    "age": "12 years",
+    "location": "South wall pergola",
+    "details": "Fragrant pink blooms, trained along the pergola structure.",
+    "mapPosition": { "x": 72, "y": 72 }
+  },
+  {
+    "id": "linden-1",
+    "name": "Linden",
+    "type": "Tree",
+    "age": "80 years",
+    "location": "East avenue",
+    "details": "Part of the old avenue planting that frames the approach.",
+    "mapPosition": { "x": 40, "y": 60 }
+  }
+]
