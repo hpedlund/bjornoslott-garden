@@ -7,6 +7,7 @@ body {
   margin: 0;
   background: #f7f8f5;
   color: #1e2b20;
+  --map-height-ratio: 78vh;
 }
 
 main {
@@ -27,6 +28,18 @@ main {
   height: auto;
 }
 
+.visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
 .map-section {
   margin: 0;
   width: 100vw;
@@ -43,7 +56,7 @@ main {
 
 .map {
   width: 100%;
-  height: min(78vh, 760px);
+  height: min(var(--map-height-ratio), 760px);
   min-height: 620px;
   border-top: 2px solid #60725f;
   border-bottom: 2px solid #60725f;
