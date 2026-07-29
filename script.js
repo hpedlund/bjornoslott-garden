@@ -7,6 +7,10 @@ const mapSpan = { latitude: 0.00045, longitude: 0.00075 };
 
 mapLabelElement.textContent = `Default center: ${defaultMapCenter.latitude}, ${defaultMapCenter.longitude}`;
 
+function clamp(value, min, max) {
+  return Math.min(Math.max(value, min), max);
+}
+
 function renderSelection(item) {
   selectionElement.replaceChildren();
 
@@ -45,8 +49,8 @@ function addMarker(item) {
       (2 * mapSpan.latitude)) *
     100;
 
-  marker.style.left = `${Math.min(Math.max(x, 0), 100)}%`;
-  marker.style.top = `${Math.min(Math.max(y, 0), 100)}%`;
+  marker.style.left = `${clamp(x, 0, 100)}%`;
+  marker.style.top = `${100 - clamp(y, 0, 100)}%`;
   marker.addEventListener("click", () => renderSelection(item));
   mapElement.append(marker);
 }
