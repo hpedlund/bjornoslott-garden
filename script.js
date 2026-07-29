@@ -1,7 +1,7 @@
 const selectionElement = document.getElementById("selection");
 const inventoryBodyElement = document.getElementById("inventory-body");
 const defaultMapCenter = { latitude: 56.7705576, longitude: 16.3833692 };
-const defaultZoomLevel = 19;
+const defaultZoomLevel = 18;
 
 const map = L.map("map").setView(
   [defaultMapCenter.latitude, defaultMapCenter.longitude],
@@ -13,7 +13,8 @@ L.tileLayer(
   {
     attribution:
       "Tiles &copy; Esri &mdash; Source: Esri, i-cubed, USDA, USGS, AEX, GeoEye, Getmapping, Aerogrid, IGN, IGP, UPR-EGP, and the GIS User Community",
-    maxZoom: 19,
+    maxZoom: 20,
+    maxNativeZoom: 18,
   }
 ).addTo(map);
 
