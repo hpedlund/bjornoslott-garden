@@ -38,11 +38,26 @@ function addMarker(item) {
 
 function addInventoryRow(item) {
   const row = document.createElement("tr");
-  [item.name, item.type, item.age, item.location, item.details].forEach((value) => {
-    const cell = document.createElement("td");
-    cell.textContent = value;
-    row.append(cell);
-  });
+  const nameCell = document.createElement("td");
+  nameCell.textContent = item.name;
+  row.append(nameCell);
+
+  const typeCell = document.createElement("td");
+  typeCell.textContent = item.type;
+  row.append(typeCell);
+
+  const ageCell = document.createElement("td");
+  ageCell.textContent = item.age;
+  row.append(ageCell);
+
+  const locationCell = document.createElement("td");
+  locationCell.textContent = item.location;
+  row.append(locationCell);
+
+  const detailsCell = document.createElement("td");
+  detailsCell.textContent = item.details;
+  row.append(detailsCell);
+
   inventoryBodyElement.append(row);
 }
 
