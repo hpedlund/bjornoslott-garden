@@ -15,10 +15,6 @@
           src="./assets/bjornoslott-garden-logo.svg"
           alt="Björnö Slott Garden"
         />
-        <p class="visually-hidden" id="map-instructions">
-          Click any marker on the map to view plant or tree details. Pan and zoom
-          with your mouse or touch, and review the selected item in the overlay.
-        </p>
       </header>
 
       <section
@@ -26,6 +22,10 @@
         aria-label="Garden map with plant markers"
         aria-describedby="map-instructions"
       >
+        <p class="visually-hidden" id="map-instructions">
+          Click any marker on the map to view plant or tree details. Pan and zoom
+          with your mouse or touch, and review the selected item in the overlay.
+        </p>
         <div class="map-frame">
           <div class="map" id="map" role="application" aria-label="Interactive garden map"></div>
           <aside class="selection-overlay" aria-live="polite">
