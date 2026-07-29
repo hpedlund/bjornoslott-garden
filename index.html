@@ -3,18 +3,16 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="theme-color" content="#1e2b20" />
     <title>Björnö Slott Garden Inventory</title>
     <link href="https://unpkg.com/maplibre-gl@5.6.2/dist/maplibre-gl.css" rel="stylesheet" />
+    <link rel="manifest" href="/manifest.webmanifest" />
     <link rel="stylesheet" href="styles.css" />
   </head>
   <body>
     <main>
       <header class="site-header">
-        <img
-          class="site-logo"
-          src="/assets/bjornoslott-garden-logo.svg"
-          alt="Björnö Slott Garden"
-        />
+        <h1 class="site-title">Björnö Slott Garden</h1>
       </header>
 
       <section
@@ -22,18 +20,17 @@
         aria-label="Garden map with plant markers"
         aria-describedby="map-instructions"
       >
+        <div class="timeline-controls">
+          <label for="year-select">Map year</label>
+          <select id="year-select" aria-label="Select map year"></select>
+        </div>
         <p class="visually-hidden" id="map-instructions">
-          Click any marker on the map to view plant or tree details. Pan and zoom
-          with your mouse or touch, and review the selected item in the overlay.
+          Click any marker on the map to view plant or tree details in a popup.
+          Pan and zoom with your mouse or touch and choose a map year to see
+          time progression.
         </p>
         <div class="map-frame">
           <div class="map" id="map" role="application" aria-label="Interactive garden map"></div>
-          <aside class="selection-overlay" aria-live="polite">
-            <h2>Selected plant/tree</h2>
-            <div id="selection">
-              Click a marker to view planted timestamp, location and details.
-            </div>
-          </aside>
         </div>
       </section>
 
@@ -44,7 +41,8 @@
             <tr>
               <th>Name</th>
               <th>Type</th>
-              <th>Planted timestamp</th>
+              <th>Year</th>
+              <th>Area</th>
               <th>Location</th>
               <th>Details</th>
             </tr>
