@@ -4,6 +4,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Björnö Slott Garden Inventory</title>
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" crossorigin="" />
     <link rel="stylesheet" href="styles.css" />
   </head>
   <body>
@@ -11,14 +12,12 @@
       <h1>Björnö Slott Garden Inventory</h1>
       <p>
         Click any marker on the map to query the plant or tree details from the
-        static inventory. The map is centered on Björnö Slott
-        (56.7705576, 16.3833692).
+        static inventory. Pan and zoom with your mouse or touch. The map is
+        centered on Björnö Slott (56.7705576, 16.3833692).
       </p>
 
       <section class="map-section" aria-label="Garden map with plant markers">
-        <div class="map" id="map" role="img" aria-label="Garden map">
-          <div class="map-label" id="map-label"></div>
-        </div>
+        <div class="map" id="map" role="application" aria-label="Interactive garden map"></div>
       </section>
 
       <section class="details" aria-live="polite">
@@ -44,6 +43,7 @@
         </table>
       </section>
     </main>
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV/XN/WLEg=" crossorigin=""></script>
     <script src="script.js"></script>
   </body>
 </html>

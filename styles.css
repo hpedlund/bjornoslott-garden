@@ -25,34 +25,7 @@ main {
   height: 420px;
   border: 2px solid #60725f;
   border-radius: 8px;
-  background: linear-gradient(180deg, #b9d8a9 0%, #a4ca92 70%, #91ba81 100%);
   overflow: hidden;
-}
-
-.map-label {
-  position: absolute;
-  top: 0.5rem;
-  left: 0.5rem;
-  background: rgba(255, 255, 255, 0.85);
-  padding: 0.25rem 0.5rem;
-  border-radius: 4px;
-  font-size: 0.9rem;
-  z-index: 2;
-}
-
-.plant-marker {
-  position: absolute;
-  width: 1.25rem;
-  height: 1.25rem;
-  border-radius: 50%;
-  border: 1px solid #2d4f2d;
-  background: #2f7d32;
-  cursor: pointer;
-}
-
-.plant-marker:focus-visible {
-  outline: 2px solid #0d47a1;
-  outline-offset: 2px;
 }
 
 .details {

@@ -1,15 +1,21 @@
-const mapElement = document.getElementById("map");
-const mapLabelElement = document.getElementById("map-label");
 const selectionElement = document.getElementById("selection");
 const inventoryBodyElement = document.getElementById("inventory-body");
 const defaultMapCenter = { latitude: 56.7705576, longitude: 16.3833692 };
-const mapSpan = { latitude: 0.00045, longitude: 0.00075 };
+const defaultZoomLevel = 19;
 
-mapLabelElement.textContent = `Default center: ${defaultMapCenter.latitude}, ${defaultMapCenter.longitude}`;
+const map = L.map("map").setView(
+  [defaultMapCenter.latitude, defaultMapCenter.longitude],
+  defaultZoomLevel
+);
 
-function clamp(value, min, max) {
-  return Math.min(Math.max(value, min), max);
-}
+L.tileLayer(
+  "https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/{z}/{y}/{x}",
+  {
+    attribution:
+      "Tiles &copy; Esri &mdash; Source: Esri, i-cubed, USDA, USGS, AEX, GeoEye, Getmapping, Aerogrid, IGN, IGP, UPR-EGP, and the GIS User Community",
+    maxZoom: 19,
+  }
+).addTo(map);
 
 function renderSelection(item) {
   selectionElement.replaceChildren();
@@ -34,25 +40,19 @@ function renderSelection(item) {
 }
 
 function addMarker(item) {
-  const marker = document.createElement("button");
-  marker.className = "plant-marker";
-  marker.type = "button";
-  marker.title = item.name;
-  marker.setAttribute("aria-label", `Show details for ${item.name}`);
-
-  const x =
-    ((item.mapPosition.longitude - (defaultMapCenter.longitude - mapSpan.longitude)) /
-      (2 * mapSpan.longitude)) *
-    100;
-  const y =
-    ((item.mapPosition.latitude - (defaultMapCenter.latitude - mapSpan.latitude)) /
-      (2 * mapSpan.latitude)) *
-    100;
-
-  marker.style.left = `${clamp(x, 0, 100)}%`;
-  marker.style.top = `${100 - clamp(y, 0, 100)}%`;
-  marker.addEventListener("click", () => renderSelection(item));
-  mapElement.append(marker);
+  const marker = L.circleMarker(
+    [item.mapPosition.latitude, item.mapPosition.longitude],
+    {
+      radius: 10,
+      fillColor: "#2f7d32",
+      color: "#2d4f2d",
+      weight: 1,
+      fillOpacity: 0.9,
+    }
+  );
+  marker.bindTooltip(item.name);
+  marker.on("click", () => renderSelection(item));
+  marker.addTo(map);
 }
 
 function addInventoryRow(item) {
