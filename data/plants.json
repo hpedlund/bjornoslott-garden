@@ -3,7 +3,8 @@
     "id": "oak-1",
     "name": "Old Oak",
     "type": "Tree",
-    "plantedAt": "1906-04-15T00:00:00Z",
+    "plantedAt": "1860-04-15T00:00:00Z",
+    "area": "42 m² canopy",
     "location": "North lawn near the manor",
     "details": "Historic oak that marks the northern edge of the central lawn.",
     "mapPosition": { "latitude": 56.77079, "longitude": 16.38305 }
@@ -13,6 +14,7 @@
     "name": "Heritage Apple",
     "type": "Tree",
     "plantedAt": "1991-05-20T00:00:00Z",
+    "area": "18 m² canopy",
     "location": "Orchard row B, east side",
     "details": "Traditional Swedish apple variety used for autumn harvest.",
     "mapPosition": { "latitude": 56.77062, "longitude": 16.38371 }
@@ -22,6 +24,7 @@
     "name": "Climbing Rose",
     "type": "Plant",
     "plantedAt": "2014-06-01T00:00:00Z",
+    "area": "6 m² bed",
     "location": "South wall pergola",
     "details": "Fragrant pink blooms, trained along the pergola structure.",
     "mapPosition": { "latitude": 56.77038, "longitude": 16.38341 }
@@ -31,8 +34,19 @@
     "name": "Linden",
     "type": "Tree",
     "plantedAt": "1946-09-10T00:00:00Z",
+    "area": "24 m² canopy",
     "location": "East avenue",
     "details": "Part of the old avenue planting that frames the approach.",
     "mapPosition": { "latitude": 56.77054, "longitude": 16.38399 }
+  },
+  {
+    "id": "meadow-1",
+    "name": "Pollinator Meadow",
+    "type": "Plant",
+    "plantedAt": "2026-05-01T00:00:00Z",
+    "area": "85 m² field strip",
+    "location": "West grounds edge",
+    "details": "Native wildflower mix planned to support pollinators.",
+    "mapPosition": { "latitude": 56.77073, "longitude": 16.38273 }
   }
 ]

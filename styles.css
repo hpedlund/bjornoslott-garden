@@ -16,16 +16,15 @@ main {
 }
 
 .site-header {
-  display: flex;
-  justify-content: center;
-  margin: 0 0 0.75rem;
+  margin: 0 0 1rem;
+  text-align: center;
 }
 
-.site-logo {
-  display: block;
-  width: 100%;
-  max-width: 420px;
-  height: auto;
+.site-title {
+  margin: 0;
+  font-size: clamp(1.4rem, 2.4vw, 2rem);
+  font-weight: 600;
+  letter-spacing: 0.03em;
 }
 
 .visually-hidden {
@@ -54,6 +53,23 @@ main {
   position: relative;
 }
 
+.timeline-controls {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  margin: 0 auto 0.75rem;
+  max-width: 900px;
+  padding: 0 1rem;
+}
+
+.timeline-controls select {
+  padding: 0.35rem 0.5rem;
+  border: 1px solid #c3d2bf;
+  border-radius: 6px;
+  background: #fff;
+  color: inherit;
+}
+
 .map {
   width: 100%;
   height: clamp(620px, 72vh, 760px);
@@ -62,21 +78,9 @@ main {
   overflow: hidden;
 }
 
-.selection-overlay {
-  position: absolute;
-  top: 1rem;
-  left: 1rem;
-  z-index: 1;
-  width: min(360px, calc(100% - 2rem));
-  background: #fff;
+.maplibregl-popup-content {
   border: 1px solid #c3d2bf;
-  border-radius: 8px;
-  padding: 1rem;
-  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.16);
-}
-
-.selection-overlay h2 {
-  margin: 0 0 0.5rem;
+  color: #1e2b20;
 }
 
 .map-marker {

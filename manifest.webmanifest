@@ -1,0 +1,16 @@
+{
+  "name": "Björnö Slott Garden",
+  "short_name": "Björnö Garden",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#f7f8f5",
+  "theme_color": "#1e2b20",
+  "icons": [
+    {
+      "src": "/assets/bjornoslott-garden-logo.svg",
+      "sizes": "any",
+      "type": "image/svg+xml",
+      "purpose": "any"
+    }
+  ]
+}
