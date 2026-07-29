@@ -74,7 +74,8 @@ function addMarker(item) {
     .setLngLat([item.mapPosition.longitude, item.mapPosition.latitude])
     .addTo(map);
 
-  markerElement.addEventListener("click", () => {
+  markerElement.addEventListener("click", (event) => {
+    event.stopPropagation();
     if (activePopup) {
       activePopup.remove();
     }
