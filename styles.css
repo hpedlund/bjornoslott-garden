@@ -7,7 +7,7 @@ body {
   margin: 0;
   background: #f7f8f5;
   color: #1e2b20;
-  --map-height-ratio: 78vh;
+  --map-height-preferred: 78vh;
 }
 
 main {
@@ -56,7 +56,7 @@ main {
 
 .map {
   width: 100%;
-  height: clamp(620px, var(--map-height-ratio), 760px);
+  height: clamp(620px, var(--map-height-preferred), 760px);
   border-top: 2px solid #60725f;
   border-bottom: 2px solid #60725f;
   overflow: hidden;
